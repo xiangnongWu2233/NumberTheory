@@ -1,0 +1,3 @@
+/Users/xiangnongwu/Documents/Projects/NumberTheory/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/xiangnongwu/Documents/Projects/NumberTheory/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/xiangnongwu/Documents/Projects/NumberTheory/cmake-build-debug/CMakeFiles/NumberTheory.dir
