@@ -9,7 +9,7 @@ using namespace std;
 
 bignum::bignum(string num)
 {
-    length=1;
+    sign=1;length=1;
     for(int i=1;i<=1000;i++)
         digits[i]=0;
     //
@@ -49,15 +49,18 @@ bignum bignum::add(bignum a,bignum b)
 bignum bignum::subtract(bignum a, bignum b)
 {
     bignum ans=bignum();
-    int aLength=a.length,bLength=b.length;
-    ans.length= max(aLength,bLength);
-    for(int i=1;i<=ans.length;i++)
-        ans.digits[i]=a.digits[i]+b.digits[i];
-    for(int i=1;i<=ans.length;i++)
-    {
-        ans.digits[i+1]+=ans.digits[i]/10000;
-        ans.digits[i]%=10000;
-    }
+    ans.length=max(a.length,b.length);
+    for(i=1;i<=ans.length;i++)
+        ans.digits[i]=a.digits[i]-b.digits[i];
+    for(i=1;i<=ans.length;i++)
+        if(ans.digits[i]<0)
+        {
+            ans.digits[i+1]--;
+            ans.digits[i]+=10;
+        }
+    if(ans.digits[ans.length]==0)
+        ans.length--;
+    return ans;
 }
 
 int bignum::compare(bignum a, bignum b)
