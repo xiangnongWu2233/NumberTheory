@@ -23,7 +23,10 @@ public:
     static bignum subtract(bignum a,bignum b);
     static bignum multiply(bignum a,bignum b);
     static bignum divide(bignum a,bignum b);
+
     static int compare(bignum a,bignum b);
+    static int compare_abs(bignum a, bignum b);
+
     bignum power();
     bignum mod();
     int sign,length,digits[1001];
